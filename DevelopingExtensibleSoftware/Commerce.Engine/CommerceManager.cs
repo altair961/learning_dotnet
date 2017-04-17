@@ -4,17 +4,18 @@ using Commerce.Engine.DataAccess;
 using Commerce.Engine.DataModels;
 using Commerce.Engine.Entities;
 using System.Transactions;
+using Commerce.Engine.Contracts;
 
 namespace Commerce.Engine
 {
     public class CommerceManager
     {
-        public CommerceManager(StoreRepository storeRepository)
+        public CommerceManager(IStoreRepository storeRepository)
         {
             _StoreRepository = storeRepository;
         }
 
-        StoreRepository _StoreRepository;
+        IStoreRepository _StoreRepository;
 
         public void ProcessOrder(OrderData orderData)
         {
