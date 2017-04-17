@@ -11,8 +11,7 @@ namespace DevelopingExtensibleSoftware
     {
         static void Main(string[] args)
         {
-            StoreRepository storeRepository = new StoreRepository();
-            storeRepository.Initialize();
+
 
             OrderData orderData = new OrderData()
             {
