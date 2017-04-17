@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Commerce.Engine.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Commerce.Engine
 {
-    public class PaymentProcessor
+    public class PaymentProcessor : IProcessCreditCard
     {
         public bool ProcessCreditCard(string customerName, string creditCard, string expirationDate, double amount)
         {

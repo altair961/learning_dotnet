@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="CommerceManager.cs" />
     <Compile Include="Contracts\ICommerceManager.cs" />
+    <Compile Include="Contracts\IProcessCreditCard.cs" />
     <Compile Include="Contracts\IStoreRepository.cs" />
     <Compile Include="DataAccess\StoreRepository.cs" />
     <Compile Include="DataModels\OrderData.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Entities\Inventory.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\PurchasedItem.cs" />
+    <Compile Include="Contracts\IMailer.cs" />
     <Compile Include="Mailer.cs" />
     <Compile Include="PaymentProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
