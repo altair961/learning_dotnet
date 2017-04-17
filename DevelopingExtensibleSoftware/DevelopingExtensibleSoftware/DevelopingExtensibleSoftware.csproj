@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Commerce.Engine\Commerce.Engine.csproj">
+      <Project>{517044E6-81B4-4885-91D3-20ED99F547F1}</Project>
+      <Name>Commerce.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

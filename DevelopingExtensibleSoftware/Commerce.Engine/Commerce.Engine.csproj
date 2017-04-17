@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,15 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommerceManager.cs" />
+    <Compile Include="DataAccess\Store.cs" />
+    <Compile Include="DataModels\OrderData.cs" />
+    <Compile Include="DataModels\OrderLineItemData.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Inventory.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\PurchasedItem.cs" />
     <Compile Include="Mailer.cs" />
     <Compile Include="PaymentProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data Access\" />
-    <Folder Include="Data Models\" />
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
