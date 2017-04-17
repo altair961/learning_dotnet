@@ -54,7 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommerceManager.cs" />
-    <Compile Include="DataAccess\Store.cs" />
+    <Compile Include="Contracts\IStoreRepository.cs" />
+    <Compile Include="DataAccess\StoreRepository.cs" />
     <Compile Include="DataModels\OrderData.cs" />
     <Compile Include="DataModels\OrderLineItemData.cs" />
     <Compile Include="Entities\Customer.cs" />
