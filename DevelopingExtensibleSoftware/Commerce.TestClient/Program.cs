@@ -4,6 +4,8 @@ using System.Linq;
 using Commerce.Engine;
 using Commerce.Engine.DataModels;
 using Microsoft.Practices.Unity;
+using Commerce.Engine.Contracts;
+using Commerce.Engine.DataAccess;
 
 namespace Commerce.TestClient
 {
@@ -13,6 +15,9 @@ namespace Commerce.TestClient
         {
 
             IUnityContainer container = new UnityContainer();
+            container.RegisterType<IStoreRepository, StoreRepository>()
+                     .RegisterType<ICommerceManager, CommerceManager>();
+
 
 
             OrderData orderData = new OrderData()
@@ -29,7 +34,7 @@ namespace Commerce.TestClient
                 ExpirationDate = "1217"
             };
 
-            CommerceManager commerceEngine = new CommerceManager(storeRepository);
+            ICommerceManager commerceEngine = container.Resolve<ICommerceManager>();
             commerceEngine.ProcessOrder(orderData);
 
             Console.WriteLine();

@@ -8,7 +8,7 @@ using Commerce.Engine.Contracts;
 
 namespace Commerce.Engine
 {
-    public class CommerceManager
+    public class CommerceManager : ICommerceManager
     {
         public CommerceManager(IStoreRepository storeRepository)
         {
