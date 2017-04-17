@@ -8,6 +8,11 @@ namespace Commerce.Engine.DataAccess
 {
     public class StoreRepository : IStoreRepository
     {
+        public StoreRepository()
+        {
+            Initialize();
+        }
+
         List<Product> _Products = null;
         List<Inventory> _ProductInventory = null;
         List<Customer> _Customers = null;
