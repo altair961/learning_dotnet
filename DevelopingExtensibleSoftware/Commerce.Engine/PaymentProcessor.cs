@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Commerce.Engine
 {
-    public class PaymentProcessor : IProcessCreditCard
+    public class PaymentProcessor : IPaymentProcessor
     {
         public bool ProcessCreditCard(string customerName, string creditCard, string expirationDate, double amount)
         {

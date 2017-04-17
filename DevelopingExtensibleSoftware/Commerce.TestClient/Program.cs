@@ -16,7 +16,9 @@ namespace Commerce.TestClient
 
             IUnityContainer container = new UnityContainer();
             container.RegisterType<IStoreRepository, StoreRepository>()
-                     .RegisterType<ICommerceManager, CommerceManager>();
+                     .RegisterType<ICommerceManager, CommerceManager>()
+                     .RegisterType<IMailer, Mailer>()
+                     .RegisterType<IPaymentProcessor, PaymentProcessor>();
 
 
 

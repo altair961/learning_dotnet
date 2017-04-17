@@ -10,7 +10,9 @@ namespace Commerce.Engine
 {
     public class CommerceManager : ICommerceManager
     {
-        public CommerceManager(IStoreRepository storeRepository)
+        public CommerceManager(IStoreRepository storeRepository, 
+                               IPaymentProcessor paymentProcessor,
+                               IMailer mailer)
         {
             _StoreRepository = storeRepository;
         }
