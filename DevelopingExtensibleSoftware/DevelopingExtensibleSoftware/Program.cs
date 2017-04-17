@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Commerce.Engine;
 using Commerce.Engine.DataModels;
-using Commerce.Engine.DataAccess;
+using Microsoft.Practices.Unity;
 
 namespace DevelopingExtensibleSoftware
 {
@@ -12,7 +12,7 @@ namespace DevelopingExtensibleSoftware
         static void Main(string[] args)
         {
 
-
+            IUnityContainer container = new UnityContainer();
             OrderData orderData = new OrderData()
             {
                 CustomerEmail = "miguelcastro67@gmail.com",
