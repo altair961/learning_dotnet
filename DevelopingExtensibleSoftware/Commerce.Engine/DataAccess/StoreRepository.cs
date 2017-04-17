@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Commerce.Engine.Entities;
+using Commerce.Engine.Contracts;
 
 namespace Commerce.Engine.DataAccess
 {
-    public class StoreRepository
+    public class StoreRepository : IStoreRepository
     {
         List<Product> _Products = null;
         List<Inventory> _ProductInventory = null;
