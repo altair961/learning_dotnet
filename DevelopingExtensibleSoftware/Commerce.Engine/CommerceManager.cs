@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
-using Commerce.Engine.DataAccess;
-using Commerce.Engine.DataModels;
+using Commerce.Common.DataModels;
 using Commerce.Engine.Entities;
 using System.Transactions;
 using Commerce.Engine.Contracts;
+using Commerce.Common;
+using Commerce.Providers;
 
 namespace Commerce.Engine
 {

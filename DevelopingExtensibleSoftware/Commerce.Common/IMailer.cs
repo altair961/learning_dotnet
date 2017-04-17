@@ -1,10 +1,12 @@
-﻿using Commerce.Engine.DataModels;
+﻿using Commerce.Common.DataModels;
 
-namespace Commerce.Engine.Contracts
+namespace Commerce.Common
 {
     public interface IMailer
     {
         void SendInvoiceEmail(OrderData orderData);
         void SendRejectionEmail(OrderData orderData);
+        string FromAddress { get; set; }
+        string SmtpServer { get; set; }
     }
 }

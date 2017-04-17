@@ -1,4 +1,4 @@
-﻿namespace Commerce.Engine.Contracts
+﻿namespace Commerce.Common
 {
     public interface IPaymentProcessor
     {

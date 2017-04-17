@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Commerce.Engine.DataModels;
-using Commerce.Engine.Contracts;
+using Commerce.Common;
+using Commerce.Common.DataModels;
 
-namespace Commerce.Engine
+namespace Commerce.Providers
 {
     public class Mailer : IMailer
     {
@@ -17,5 +15,8 @@ namespace Commerce.Engine
         {
             Console.WriteLine("I'm sorry {0}, your order could not be processed at this time.", orderData.CustomerEmail);
         }
+
+        public string FromAddress { get; set; }
+        public string SmtpServer { get; set; }
     }
 }

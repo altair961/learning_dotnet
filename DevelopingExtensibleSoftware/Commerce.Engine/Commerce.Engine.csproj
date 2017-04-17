@@ -55,21 +55,24 @@
   <ItemGroup>
     <Compile Include="CommerceManager.cs" />
     <Compile Include="Contracts\ICommerceManager.cs" />
-    <Compile Include="Contracts\IPaymentProcessor.cs" />
     <Compile Include="Contracts\IStoreRepository.cs" />
     <Compile Include="DataAccess\StoreRepository.cs" />
-    <Compile Include="DataModels\OrderData.cs" />
-    <Compile Include="DataModels\OrderLineItemData.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Inventory.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\PurchasedItem.cs" />
-    <Compile Include="Contracts\IMailer.cs" />
-    <Compile Include="Mailer.cs" />
-    <Compile Include="PaymentProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Commerce.Common\Commerce.Common.csproj">
+      <Project>{220E3C4D-4E54-4DE2-9572-A62ED3B3E78E}</Project>
+      <Name>Commerce.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commerce.Providers\Commerce.Providers.csproj">
+      <Project>{936E0188-FDA4-41A5-B684-A1EFE305BB96}</Project>
+      <Name>Commerce.Providers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

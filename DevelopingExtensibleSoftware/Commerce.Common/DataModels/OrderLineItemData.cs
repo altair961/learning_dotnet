@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Commerce.Engine.DataModels
+﻿namespace Commerce.Common.DataModels
 {
     public class OrderLineItemData
     {

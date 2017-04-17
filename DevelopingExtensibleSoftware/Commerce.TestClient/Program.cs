@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Commerce.Engine;
-using Commerce.Engine.DataModels;
 using Microsoft.Practices.Unity;
 using Commerce.Engine.Contracts;
 using Commerce.Engine.DataAccess;
+using Commerce.Common;
+using Commerce.Common.DataModels;
+using Commerce.Providers;
 
 namespace Commerce.TestClient
 {

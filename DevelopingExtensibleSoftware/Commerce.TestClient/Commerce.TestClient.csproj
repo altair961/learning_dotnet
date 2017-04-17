@@ -62,9 +62,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Commerce.Common\Commerce.Common.csproj">
+      <Project>{220e3c4d-4e54-4de2-9572-a62ed3b3e78e}</Project>
+      <Name>Commerce.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Commerce.Engine\Commerce.Engine.csproj">
       <Project>{517044e6-81b4-4885-91d3-20ed99f547f1}</Project>
       <Name>Commerce.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commerce.Providers\Commerce.Providers.csproj">
+      <Project>{936E0188-FDA4-41A5-B684-A1EFE305BB96}</Project>
+      <Name>Commerce.Providers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

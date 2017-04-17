@@ -1,4 +1,4 @@
-﻿using Commerce.Engine.DataModels;
+﻿using Commerce.Common.DataModels;
 
 namespace Commerce.Engine.Contracts
 {
