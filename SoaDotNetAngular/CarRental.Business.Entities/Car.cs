@@ -1,9 +1,10 @@
-﻿using System.Runtime.Serialization;
+﻿using Core.Common;
+using System.Runtime.Serialization;
 
 namespace CarRental.Business.Entities
 {
     [DataContract]
-    public class Car
+    public class Car : EntityBase
     {
         [DataMember]
         public int CarId { get; set; }
