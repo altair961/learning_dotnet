@@ -3,7 +3,7 @@
 namespace Core.Common
 {
     [DataContract]
-    public class EntityBase : IExtensibleDataObject
+    public abstract class EntityBase : IExtensibleDataObject
     {
         public ExtensionDataObject ExtensionData { get; set; }
     }
