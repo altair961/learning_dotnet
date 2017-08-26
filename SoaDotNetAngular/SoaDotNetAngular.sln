@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{57457212-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D413B7A0-CEA0-4EC3-9CE8-EE4F23E30079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common", "Core\Core.Common\Core.Common.csproj", "{EA1555CB-1D77-414C-9318-0B74B191920D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common.Contracts", "Core\Core.Common.Contracts\Core.Common.Contracts.csproj", "{6CC5EDF2-BAD9-4108-A54F-93439713758D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental.Business.Entities", "CarRental.Business.Entities\CarRental.Business.Entities.csproj", "{614E49E8-190C-4F03-83E6-3A389ECC91EC}"
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EA1555CB-1D77-414C-9318-0B74B191920D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA1555CB-1D77-414C-9318-0B74B191920D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA1555CB-1D77-414C-9318-0B74B191920D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA1555CB-1D77-414C-9318-0B74B191920D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CC5EDF2-BAD9-4108-A54F-93439713758D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CC5EDF2-BAD9-4108-A54F-93439713758D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CC5EDF2-BAD9-4108-A54F-93439713758D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,7 +40,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EA1555CB-1D77-414C-9318-0B74B191920D} = {57457212-CE5F-44EA-9113-1E0B83594978}
 		{6CC5EDF2-BAD9-4108-A54F-93439713758D} = {57457212-CE5F-44EA-9113-1E0B83594978}
 		{614E49E8-190C-4F03-83E6-3A389ECC91EC} = {95B213D1-9C4A-4A57-B054-2C02986ABEA9}
 		{0B94FFF0-5873-43A8-8076-477ECACBB02C} = {B6424B84-1580-435A-A5A1-DA728F8BDD75}
