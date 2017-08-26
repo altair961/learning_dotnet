@@ -1,7 +1,6 @@
 ﻿using Core.Common;
 using Core.Common.Contracts;
 using System.Runtime.Serialization;
-using System;
 
 namespace CarRental.Business.Entities
 {
