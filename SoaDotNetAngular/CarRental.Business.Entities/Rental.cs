@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace CarRental.Business.Entities
 {
     [DataContract]
-    public class Rental : EntityBase, IIdentifiableEntity
+    public class Rental : EntityBase, IIdentifiableEntity, IAccountOwnedEntity
     {
         [DataMember]
         public int RentalId { get; set; }
@@ -30,6 +30,11 @@ namespace CarRental.Business.Entities
         {
             get { return RentalId; }
             set { RentalId = value; }
+        }
+
+        public int OwnerAccountId
+        {
+            get { return AccountId; }
         }
     }
 }
