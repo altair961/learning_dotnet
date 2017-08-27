@@ -1,6 +1,8 @@
-﻿namespace CarRental.Client.Entities
+﻿using Core.Common;
+
+namespace CarRental.Client.Entities
 {
-    public class Car
+    public class Car : ObjectBase
     {
         private int carId;
         private string description;
@@ -18,6 +20,7 @@
             set
             {
                 carId = value;
+                OnPropertyChanged("CarId");
             }
         }
 
@@ -30,6 +33,7 @@
             set
             {
                 description = value;
+                OnPropertyChanged("Description");
             }
         }
 
@@ -42,6 +46,7 @@
             set
             {
                 color = value;
+                OnPropertyChanged("Color");
             }
         }
 
@@ -54,6 +59,7 @@
             set
             {
                 year = value;
+                OnPropertyChanged("Year");
             }
         }
 
@@ -66,6 +72,7 @@
             set
             {
                 rentalPrice = value;
+                OnPropertyChanged("RentalPrice");
             }
         }
 
@@ -78,6 +85,7 @@
             set
             {
                 currentlyRented = value;
+                OnPropertyChanged("CurrentlyRented");
             }
         }
     }
