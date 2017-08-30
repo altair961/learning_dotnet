@@ -19,8 +19,11 @@ namespace CarRental.Client.Entities
             }
             set
             {
-                carId = value;
-                OnPropertyChanged("CarId");
+                if(carId != value)
+                {
+                    carId = value;
+                    OnPropertyChanged("CarId");
+                }
             }
         }
 
@@ -32,8 +35,11 @@ namespace CarRental.Client.Entities
             }
             set
             {
-                description = value;
-                OnPropertyChanged("Description");
+                if(description != value)
+                {
+                    description = value;
+                    OnPropertyChanged("Description");
+                }
             }
         }
 
@@ -45,8 +51,11 @@ namespace CarRental.Client.Entities
             }
             set
             {
-                color = value;
-                OnPropertyChanged("Color");
+                if (color != value)
+                {
+                    color = value;
+                    OnPropertyChanged("Color");
+                }
             }
         }
 
@@ -58,8 +67,11 @@ namespace CarRental.Client.Entities
             }
             set
             {
-                year = value;
-                OnPropertyChanged("Year");
+                if(year != value)
+                {
+                    year = value;
+                    OnPropertyChanged("Year");
+                }
             }
         }
 
@@ -71,8 +83,11 @@ namespace CarRental.Client.Entities
             }
             set
             {
-                rentalPrice = value;
-                OnPropertyChanged("RentalPrice");
+                if(rentalPrice != value)
+                {
+                    rentalPrice = value;
+                    OnPropertyChanged("RentalPrice");
+                }
             }
         }
 
@@ -84,8 +99,11 @@ namespace CarRental.Client.Entities
             }
             set
             {
-                currentlyRented = value;
-                OnPropertyChanged("CurrentlyRented");
+                if (currentlyRented != value)
+                {
+                    currentlyRented = value;
+                    OnPropertyChanged("CurrentlyRented");
+                }
             }
         }
     }
