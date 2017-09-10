@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Ploeh.AutoFixture;
+using Xunit;
 
 namespace DemoCode.Tests
 {
@@ -26,6 +27,20 @@ namespace DemoCode.Tests
 
             // Act
             sut.Substract(anonymousNumber);
+
+            // Assert
+            Assert.True(sut.Value < 0);
+        }
+
+        [Fact]
+        public void Autofixture_Anonymous_Data()
+        {
+            // Arrange
+            var sut = new Calculator();
+            var fixture = new Fixture();
+
+            // Act
+            sut.Substract(fixture.Create<int>());
 
             // Assert
             Assert.True(sut.Value < 0);
