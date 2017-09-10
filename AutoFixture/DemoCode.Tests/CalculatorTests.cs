@@ -78,5 +78,19 @@ namespace DemoCode.Tests
 
             Assert.Equal(-4, sut.Value);
         }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(0, 2)]
+        [InlineData(-5, 1)]
+        public void ShouldAdd_InlineData(int a, int b)
+        {
+            var sut = new Calculator();
+
+            sut.Add(a);
+            sut.Add(b);
+
+            Assert.Equal(a + b, sut.Value);
+        }
     }
 }
