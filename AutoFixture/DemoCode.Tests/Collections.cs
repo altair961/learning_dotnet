@@ -25,7 +25,7 @@ namespace DemoCode.Tests
         {
             var fixture = new Fixture();
 
-            IEnumerable<string> messages = fixture.CreateMany<string>(6);
+            IEnumerable<int> messages = fixture.CreateMany<int>(6);
 
             foreach (var message in messages)
             {
