@@ -21,5 +21,12 @@ namespace DemoCode.Tests
             // Assert
             Assert.Equal(firstName + ' ' + lastName, result);
         }
+
+        [Fact]
+        public void Chars()
+        {
+            var fixture = new Fixture();
+            var anonChar = fixture.Create<char>();
+        }
     }
 }
