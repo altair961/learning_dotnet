@@ -1,6 +1,6 @@
 ﻿namespace AutoFixture
 {
-    class Calculator
+    class Program
     {
         static void Main(string[] args)
         {
