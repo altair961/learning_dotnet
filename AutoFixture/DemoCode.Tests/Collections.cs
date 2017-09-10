@@ -32,5 +32,14 @@ namespace DemoCode.Tests
                 Debug.WriteLine(message);
             }
         }
+
+        [Fact]
+        public void AddingToExistingList()
+        {
+            var fixture = new Fixture();
+            var sut = new DebugMessageBuffer();
+            fixture.AddManyTo(sut.Messages, 10);
+            sut.WriteMessages();
+        }
     }
 }
