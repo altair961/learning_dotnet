@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="IntCalculator.cs" />
     <Compile Include="NameJoiner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
