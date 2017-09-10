@@ -1,4 +1,5 @@
 ﻿using Ploeh.AutoFixture;
+using Ploeh.AutoFixture.Xunit2;
 using Xunit;
 
 namespace DemoCode.Tests
@@ -80,10 +81,8 @@ namespace DemoCode.Tests
         }
 
         [Theory]
-        [InlineData(1, 2)]
-        [InlineData(0, 2)]
-        [InlineData(-5, 1)]
-        public void ShouldAdd_InlineData(int a, int b)
+        [AutoData]
+        public void ShouldAdd_AutoData(int a, int b)
         {
             var sut = new Calculator();
 
