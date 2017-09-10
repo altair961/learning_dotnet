@@ -19,5 +19,18 @@ namespace DemoCode.Tests
                 Debug.WriteLine(message);   
             }
         }
+
+        [Fact]
+        public void ExplicitNumberOfItems()
+        {
+            var fixture = new Fixture();
+
+            IEnumerable<string> messages = fixture.CreateMany<string>(6);
+
+            foreach (var message in messages)
+            {
+                Debug.WriteLine(message);
+            }
+        }
     }
 }
