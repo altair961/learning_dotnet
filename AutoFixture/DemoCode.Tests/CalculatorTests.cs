@@ -16,5 +16,19 @@ namespace DemoCode.Tests
             // Assert
             Assert.True(sut.Value < 0);
         }
+
+        [Fact]
+        public void Manual_Anonymous_Data()
+        {
+            // Arrange
+            var sut = new Calculator();
+            var anonymousNumber = 394;
+
+            // Act
+            sut.Substract(anonymousNumber);
+
+            // Assert
+            Assert.True(sut.Value < 0);
+        }
     }
 }
