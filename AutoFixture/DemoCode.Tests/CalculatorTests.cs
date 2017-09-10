@@ -82,10 +82,8 @@ namespace DemoCode.Tests
 
         [Theory]
         [AutoData]
-        public void ShouldAdd_AutoData(int a, int b)
+        public void ShouldAdd_AutoData(int a, int b, Calculator sut)
         {
-            var sut = new Calculator();
-
             sut.Add(a);
             sut.Add(b);
 
