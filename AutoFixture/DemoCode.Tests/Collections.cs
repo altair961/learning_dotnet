@@ -49,7 +49,7 @@ namespace DemoCode.Tests
             var fixture = new Fixture();
             var sut = new DebugMessageBuffer();
             var rnd = new Random();
-
+                
             //fixture.AddManyTo(sut.Messages, () => "hi");
             fixture.AddManyTo(sut.Messages, () => rnd.Next(11).ToString());
             sut.WriteMessages();

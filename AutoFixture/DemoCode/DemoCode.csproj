@@ -43,6 +43,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="DebugMessageBuffer.cs" />
     <Compile Include="DecimalCalculator.cs" />
+    <Compile Include="EmailMessage.cs" />
     <Compile Include="IntCalculator.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="LogMessageCreator.cs" />
