@@ -1,4 +1,5 @@
 ﻿using Ploeh.AutoFixture;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Xunit;
@@ -39,6 +40,17 @@ namespace DemoCode.Tests
             var fixture = new Fixture();
             var sut = new DebugMessageBuffer();
             fixture.AddManyTo(sut.Messages, 10);
+            sut.WriteMessages();
+        }
+
+        [Fact]
+        public void AddingToExistingListWithCreatorFunction()
+        {
+            var fixture = new Fixture();
+            var sut = new DebugMessageBuffer();
+            var rnd = new Random();
+
+            fixture.AddManyTo(sut.Messages, () => "hi");
             sut.WriteMessages();
         }
     }
