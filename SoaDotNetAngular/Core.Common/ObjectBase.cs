@@ -11,5 +11,11 @@ namespace Core.Common
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private bool isDirty;
+        public bool IsDirty
+        {
+            get { return isDirty; }
+        }
     }
 }
