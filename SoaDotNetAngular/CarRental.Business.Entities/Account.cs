@@ -1,4 +1,4 @@
-﻿using Core.Common;
+﻿using Core.Common.Core;
 using Core.Common.Contracts;
 using System.Runtime.Serialization;
 

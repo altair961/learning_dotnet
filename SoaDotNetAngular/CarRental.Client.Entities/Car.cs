@@ -1,4 +1,4 @@
-﻿using Core.Common;
+﻿using Core.Common.Core;
 
 namespace CarRental.Client.Entities
 {
@@ -22,7 +22,7 @@ namespace CarRental.Client.Entities
                 if(carId != value)
                 {
                     carId = value;
-                    OnPropertyChanged("CarId");
+                    OnPropertyChanged(() => CarId);
                 }
             }
         }
@@ -38,7 +38,7 @@ namespace CarRental.Client.Entities
                 if(description != value)
                 {
                     description = value;
-                    OnPropertyChanged("Description");
+                    OnPropertyChanged(() => Description);
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace CarRental.Client.Entities
                 if (color != value)
                 {
                     color = value;
-                    OnPropertyChanged("Color");
+                    OnPropertyChanged(() => Color);
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace CarRental.Client.Entities
                 if(year != value)
                 {
                     year = value;
-                    OnPropertyChanged("Year");
+                    OnPropertyChanged(() => Year);
                 }
             }
         }
@@ -86,7 +86,7 @@ namespace CarRental.Client.Entities
                 if(rentalPrice != value)
                 {
                     rentalPrice = value;
-                    OnPropertyChanged("RentalPrice");
+                    OnPropertyChanged(() => RentalPrice);
                 }
             }
         }
@@ -102,7 +102,7 @@ namespace CarRental.Client.Entities
                 if (currentlyRented != value)
                 {
                     currentlyRented = value;
-                    OnPropertyChanged("CurrentlyRented");
+                    OnPropertyChanged(() => CurrentlyRented);
                 }
             }
         }

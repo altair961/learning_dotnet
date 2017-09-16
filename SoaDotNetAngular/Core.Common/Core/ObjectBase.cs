@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Core.Common.Utils;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq.Expressions;
 
-namespace Core.Common
+namespace Core.Common.Core
 {
     public class ObjectBase : INotifyPropertyChanged
     {
@@ -48,5 +51,10 @@ namespace Core.Common
             OnPropertyChanged(propertyName, true);
         }
 
+        protected virtual void OnPropertyChanged<T>(Expression<Func<T>> propertyExpression)
+        {
+            string propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
+            OnPropertyChanged(propertyName);
+        }
     }
 }
