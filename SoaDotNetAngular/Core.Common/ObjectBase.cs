@@ -10,9 +10,11 @@ namespace Core.Common
         List<PropertyChangedEventHandler> propertyChangedSubsribers =
             new List<PropertyChangedEventHandler>();
 
-        protected virtual void OnPropertyChanged(string propertyName)
+        private bool isDirty;
+        public bool IsDirty
         {
-            OnPropertyChanged(propertyName, true);
+            get { return isDirty; }
+            private set { isDirty = value; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged
@@ -32,7 +34,6 @@ namespace Core.Common
             }
         }
 
-
         protected virtual void OnPropertyChanged(string propertyName, bool makeDirty)
         {
             if (propertyChanged != null)
@@ -42,11 +43,10 @@ namespace Core.Common
                 IsDirty = true;
         }
 
-        private bool isDirty;
-        public bool IsDirty
+        protected virtual void OnPropertyChanged(string propertyName)
         {
-            get { return isDirty; }
-            private set { isDirty = value; }
+            OnPropertyChanged(propertyName, true);
         }
+
     }
 }
