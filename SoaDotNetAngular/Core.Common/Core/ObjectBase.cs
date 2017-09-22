@@ -1,8 +1,11 @@
-﻿using Core.Common.Utils;
+﻿using Core.Common.Extensions;
+using Core.Common.Utils;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Core.Common.Core
 {
@@ -12,13 +15,6 @@ namespace Core.Common.Core
 
         List<PropertyChangedEventHandler> propertyChangedSubsribers =
             new List<PropertyChangedEventHandler>();
-
-        private bool isDirty;
-        public bool IsDirty
-        {
-            get { return isDirty; }
-            private set { isDirty = value; }
-        }
 
         public event PropertyChangedEventHandler PropertyChanged
         {
@@ -55,6 +51,63 @@ namespace Core.Common.Core
         {
             string propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
             OnPropertyChanged(propertyName);
+        }
+
+        private bool isDirty;
+        public bool IsDirty
+        {
+            get { return isDirty; }
+            set { isDirty = value; }
+        }
+
+        protected List<ObjectBase> GetDirtyObjects()
+        {
+            List<ObjectBase> dirtyObjects = new List<ObjectBase>();
+
+            List<ObjectBase> visited = new List<ObjectBase>();
+            Action<ObjectBase> walk = null;
+
+            walk = (o) =>
+            {
+                if (o != null && !visited.Contains(o))
+                {
+                    visited.Add(o);
+
+                    if (o.IsDirty)
+                        dirtyObjects.Add(o);
+
+                    bool exitWalk = false;
+
+                    if (!exitWalk)
+                    {
+                        PropertyInfo[] properties = o.GetBrowsableProperties();
+                        foreach (PropertyInfo property in properties)
+                        {
+                            if (property.PropertyType.IsSubclassOf(typeof(ObjectBase)))
+                            {
+                                ObjectBase obj = (ObjectBase)property.GetValue(o, null);
+                                walk(obj);
+                            }
+                            else
+                            {
+                                IList coll = property.GetValue(o, null) as IList;
+                                if(coll != null)
+                                {
+                                    foreach (object item in coll)
+                                    {
+                                        if (item is ObjectBase)
+                                            walk((ObjectBase)item);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            walk(this);
+
+            return dirtyObjects;
         }
     }
 }
