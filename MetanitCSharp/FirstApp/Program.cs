@@ -10,7 +10,16 @@ namespace FirstApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Привет мир!");
+            Calculator.Add(2, 3);
+            Console.ReadKey();
+        }
+    }
+    class Calculator
+    {
+        public static void Add(int x, int y) 
+        {
+            int z = x + y;
+            Console.Write($"Сумма {x} и {y} равна {z}");
         }
     }
 }
