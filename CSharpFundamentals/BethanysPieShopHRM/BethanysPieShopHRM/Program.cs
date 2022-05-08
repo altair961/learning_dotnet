@@ -16,3 +16,5 @@ double rating = 99.25;
 int hoursWorked = 125;
 
 hoursWorked = 148;
+
+const double interestRate = 0.07;
