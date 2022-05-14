@@ -61,6 +61,24 @@ namespace SqlConsumer.Tests
             Wait();
         }
 
+        [Test]
+        public void LoopWithCatch() 
+        {
+            try
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    var state = new DatabaseState(_connectionString);
+                    Debug.WriteLine($"[{DateTime.Now.ToLongTimeString()}] GetDate; {state.GetDate()}");
+                }
+                Wait();
+            }
+            catch
+            {
+                GC.Collect(); // set a breackpoint here and request processes with a query from GettingNumberOfProcesses.sql
+            }
+        }
+
         private void Wait()
         {
             Thread.Sleep(5 * 1000);
