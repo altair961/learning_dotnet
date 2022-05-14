@@ -39,6 +39,28 @@ namespace SqlConsumer.Tests
             Wait(); // during that wait period the connection is hold in the memory, which is bad. The connections number is finite. after app exists everything is released. But for long running service connection will be hold in memory for all that time while the service is running.
         }
 
+        [Test]
+        public void LoopWithUsing()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                using var state = new DatabaseState(_connectionString);
+                Debug.WriteLine($"[{DateTime.Now.ToLongTimeString()}] GetDate; {state.GetDate()}");
+            }
+            Wait();
+        }
+
+        [Test]
+        public void LoopWithoutUsing() 
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                var state = new DatabaseState(_connectionString);
+                Debug.WriteLine($"[{DateTime.Now.ToLongTimeString()}] GetDate; {state.GetDate()}");
+            }
+            Wait();
+        }
+
         private void Wait()
         {
             Thread.Sleep(5 * 1000);
