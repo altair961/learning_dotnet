@@ -18,7 +18,7 @@ namespace SqlConsumer.Tests
             var config = new ConfigurationBuilder()
                 .AddJsonFile("appSettings.json")
                 .Build();
-            _connectionString = config.GetConnectionString("db");
+            _connectionString = config.GetConnectionString("db"); //db-max
         }
 
         [Test]
