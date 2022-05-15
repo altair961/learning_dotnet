@@ -4,6 +4,8 @@ using StockAnalyzer.Core.Domain;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
@@ -25,14 +27,24 @@ namespace StockAnalyzer.Windows
 
 
 
-        private async void Search_Click(object sender, RoutedEventArgs e)
+        private void Search_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 BeforeLoadingStockData();
-                var getStocksTask = GetStocks();
 
-                await getStocksTask;
+                var lines = File.ReadAllLines("StockPrices_Small.csv");
+
+                var data = new List<StockPrice>();
+
+                foreach (var line in lines.Skip(1))
+                { 
+                    var price = StockPrice.FromCSV(line);
+
+                    data.Add(price);
+                }
+
+                Stocks.ItemsSource = data.Where(sp => sp.Identifier == StockIdentifier.Text);
             }
             catch (Exception ex)
             {
