@@ -27,32 +27,43 @@ namespace StockAnalyzer.Windows
 
 
 
-        private async void Search_Click(object sender, RoutedEventArgs e)
+        private void Search_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 BeforeLoadingStockData();
 
-                await Task.Run(() => 
-                {
+                var loadLinesTask = Task.Run(() => {
                     // This code now runs in a separate thread
                     var lines = File.ReadAllLines("StockPrices_Small.csv");
+
+                    return lines;
+                });
+
+                var processStocksTask = loadLinesTask.ContinueWith(completedTask =>
+                {
+                    var lines = completedTask.Result;
 
                     var data = new List<StockPrice>();
 
                     foreach (var line in lines.Skip(1))
-                    { 
+                    {
                         var price = StockPrice.FromCSV(line);
 
                         data.Add(price);
                     }
-
 
                     // this allows us to pass our code into UI thread for execution
                     Dispatcher.Invoke(() =>
                     {
                         // Warning, do not do here anything heavy or anything that might block the UI thread.
                         Stocks.ItemsSource = data.Where(sp => sp.Identifier == StockIdentifier.Text);
+                    });
+                });
+
+                processStocksTask.ContinueWith(_ => {
+                    Dispatcher.Invoke(() => {
+                        AfterLoadingStockData();
                     });
                 });
             }
@@ -62,7 +73,6 @@ namespace StockAnalyzer.Windows
             }
             finally 
             {
-                AfterLoadingStockData();
             }
         }
 
