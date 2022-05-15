@@ -30,9 +30,9 @@ namespace StockAnalyzer.Windows
             try
             {
                 BeforeLoadingStockData();
-                var getStocksTasks = GetStocks();
+                var getStocksTask = GetStocks();
 
-                await getStocksTasks;
+                await getStocksTask;
             }
             catch (Exception ex)
             {
