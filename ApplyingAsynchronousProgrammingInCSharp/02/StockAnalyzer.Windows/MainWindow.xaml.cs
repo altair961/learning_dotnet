@@ -35,9 +35,7 @@ namespace StockAnalyzer.Windows
 
                 Task.Run(() => 
                 {
-                    // This code now runs in a separate thread,
-                    // but it cannot update UI list,
-                    // because UI list object lives in another thread - the UI thread.
+                    // This code now runs in a separate thread
                     var lines = File.ReadAllLines("StockPrices_Small.csv");
 
                     var data = new List<StockPrice>();
@@ -49,8 +47,13 @@ namespace StockAnalyzer.Windows
                         data.Add(price);
                     }
 
-                    // we get an exception here, saying that we cannot access an object of the UI thread from another thread.
-                    Stocks.ItemsSource = data.Where(sp => sp.Identifier == StockIdentifier.Text);
+
+                    // this allows us to pass our code into UI thread for execution
+                    Dispatcher.Invoke(() =>
+                    {
+                        // Warning, do not do here anything heavy or anything that might block the UI thread.
+                        Stocks.ItemsSource = data.Where(sp => sp.Identifier == StockIdentifier.Text);
+                    });
                 });
             }
             catch (Exception ex)
