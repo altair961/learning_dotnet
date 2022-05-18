@@ -32,15 +32,15 @@ namespace Preparation.Problems
             appointments.Add(new Appointment(guid2, datetime2));
             appointments.Add(new Appointment(guid3, datetime3));
 
-            //foreach (var teacher in teachers)
-            //{
-            //    if (!appointments.Any(x => x.Id == teacher.Id))
-            //    {
-            //        teachersWithoutLessons.Add(teacher);
-            //    }
-            //}
+            List<Teacher> teachersWithoutLessons = new List<Teacher>();
 
-            var teachersWithoutLessons = (teachers.Where(teacher => !appointments.Any(x => x.Id == teacher.Id))).ToList();
+            foreach (var teacher in teachers)
+            {
+                if (!appointments.Any(x => x.Id == teacher.Id))
+                {
+                    teachersWithoutLessons.Add(teacher);
+                }
+            }
         }
     }
 }
