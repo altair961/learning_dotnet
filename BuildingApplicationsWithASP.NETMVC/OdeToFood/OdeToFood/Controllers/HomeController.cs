@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OdeToFood.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,13 @@ namespace OdeToFood.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            return View();
+            var model = new RestaurantReview() 
+            {
+                Name = "Tersiguel's",
+                Rating = 9
+            };
+
+            return View(model);
         }
 
         public ActionResult About()
