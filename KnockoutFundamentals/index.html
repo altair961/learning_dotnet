@@ -10,8 +10,9 @@
 
     <h1>This is a Heading</h1>
     Name: <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
+    <input type="checkbox" data-bind="checked: nameVisible" />
     <p>
-        Hello, <span data-bind="text: name"></span>
+        Hello, <span data-bind="text: name, visible: nameVisible"></span>
     </p>
     <button data-bind="click: changeName">Change Name</button>
     <script>
@@ -20,7 +21,8 @@
                 name: ko.observable("bob"),
                 changeName: function() { // "changeName" function definition
                     this.name("steve");
-                }
+                },
+                nameVisible: ko.observable(true)
             };
 
             ko.applyBindings(viewModel); // apply all the bindings using this ViewModel
