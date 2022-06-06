@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Knockout Fundamentals</title>
-</head>
+    <head>
+        <script type="text/javascript" src=http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js> </script>
+        <title>Knockout Fundamentals</title>
+    </head>
 <body>
 
-<h1>This is a Heading</h1>
-Name: <input type="text">
-<p>
-    Hello, <span></span>
-</p>
-<button>Change Name</button>
+    <h1>This is a Heading</h1>
+    Name: <input type="text">
+    <p>
+        Hello, <span></span>
+    </p>
+    <button>Change Name</button>
+    <script>
+        $(function() { // ready function of jQuery, it is called at startup
+            var viewModel = {
+                name: "bob",
+                changeName: function() {
+                    this.name = "steve";
+                }
+            };
 
+            ko.applyBindings(viewModel);
+        });
+    </script>
 </body>
 </html>
