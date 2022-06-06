@@ -9,7 +9,7 @@
 <body>
 
     <h1>This is a Heading</h1>
-    Name: <input type="text" data-bind="value: name" />
+    Name: <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
     <p>
         Hello, <span data-bind="text: name"></span>
     </p>
