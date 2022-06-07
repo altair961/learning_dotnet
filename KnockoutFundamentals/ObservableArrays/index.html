@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-debug.js"></script>
+
+        <title>Knockout Fundamentals</title>
+    </head>
+<body>
+    <h1>This is a Heading</h1>
+    <button data-bind="click: addItem">Add</button>
+    <button data-bind="click: removeItem">Remove</button>
+
+    <ul data-bind="template: { name: 'listTempl', foreach: list }">
+    </ul>
+    
+    <script id="listTempl" type="test/html">
+        <li data-bind="text: name"></li>
+    </script>
+
+    <script>
+        $(function() { // ready function of jQuery, it is called at startup
+            var data = [{name: "Bob"}, {name: "Joe"}, {name: "John"}];
+
+            var viewModel = {
+                list: ko.observableArray(data),
+                addItem: function() {
+                    this.list.push({name: "Steve"})
+                },
+
+                removeItem: function() {
+                    this.list.pop();
+                }
+            };
+
+            ko.applyBindings(viewModel); // apply all the bindings using this ViewModel
+        });
+    </script>
+</body>
+</html>
