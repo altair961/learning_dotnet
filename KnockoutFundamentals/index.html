@@ -14,6 +14,8 @@
     <p>
         Hello, <span data-bind="text: name, visible: nameVisible"></span>
     </p>
+    <br />
+    <span data-bind="text: displayName"></span>
     <button data-bind="click: changeName">Change Name</button>
     <script>
         $(function() { // ready function of jQuery, it is called at startup
@@ -24,6 +26,10 @@
                 },
                 nameVisible: ko.observable(true)
             };
+
+            viewModel.displayName = ko.dependentObservable(function() {
+                return this.name() + " is" + (!this.nameVisible() ? " not" : "") + " visible.";
+            }, viewModel);
 
             ko.applyBindings(viewModel); // apply all the bindings using this ViewModel
         });
